@@ -1,0 +1,15 @@
+/home/joaolab/code/urlparser/bin/Debug/net7.0/urlparser
+/home/joaolab/code/urlparser/bin/Debug/net7.0/urlparser.deps.json
+/home/joaolab/code/urlparser/bin/Debug/net7.0/urlparser.runtimeconfig.json
+/home/joaolab/code/urlparser/bin/Debug/net7.0/urlparser.dll
+/home/joaolab/code/urlparser/bin/Debug/net7.0/urlparser.pdb
+/home/joaolab/code/urlparser/obj/Debug/net7.0/urlparser.csproj.AssemblyReference.cache
+/home/joaolab/code/urlparser/obj/Debug/net7.0/urlparser.GeneratedMSBuildEditorConfig.editorconfig
+/home/joaolab/code/urlparser/obj/Debug/net7.0/urlparser.AssemblyInfoInputs.cache
+/home/joaolab/code/urlparser/obj/Debug/net7.0/urlparser.AssemblyInfo.cs
+/home/joaolab/code/urlparser/obj/Debug/net7.0/urlparser.csproj.CoreCompileInputs.cache
+/home/joaolab/code/urlparser/obj/Debug/net7.0/urlparser.dll
+/home/joaolab/code/urlparser/obj/Debug/net7.0/refint/urlparser.dll
+/home/joaolab/code/urlparser/obj/Debug/net7.0/urlparser.pdb
+/home/joaolab/code/urlparser/obj/Debug/net7.0/urlparser.genruntimeconfig.cache
+/home/joaolab/code/urlparser/obj/Debug/net7.0/ref/urlparser.dll
