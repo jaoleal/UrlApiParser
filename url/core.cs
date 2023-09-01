@@ -41,6 +41,9 @@ public class CoreParseFunc{
                         Divisors = new string[] {"?"};
                         moduleindex = 1;
                     break;
+                    default:
+                        return "Divisor not recognized";
+                    break;
 
                 }
                 string[] cache = url.Split(Divisors, StringSplitOptions.RemoveEmptyEntries);
