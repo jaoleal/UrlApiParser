@@ -1,4 +1,5 @@
 Url class
+
     - getters
         - scheme
         - subdomain
@@ -12,3 +13,5 @@ Url class
         - query string count
     - constructor(parameter11)
         - const url
+
+ 

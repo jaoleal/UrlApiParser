@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Net.Http.Headers;
-using classes;
+﻿using classes;
 namespace core{
 public class CoreParseFunc{
         public URL[] URLObjects= new URL[1];
@@ -37,7 +34,7 @@ public class CoreParseFunc{
                         moduleindex = 1; 
                     break;
                     case "path":
-                        Divisors = new string[] {"https://wwww.", ".com"};
+                        Divisors = new string[] {"https://wwww.", ".com", "/"};
                         moduleindex = 1;
                     break;
                     case "querystring":
@@ -46,19 +43,14 @@ public class CoreParseFunc{
                     break;
 
                 }
-
-                
-                string[] urlmodules = new string[url.Length];
-                for (int i = 0; i < url.Length; i++){
-
-                    string[] cache = url.Split(Divisors, StringSplitOptions.RemoveEmptyEntries);
-                    urlmodules = new string[cache.Length];
-                    for (int j = 0; j < cache.Length; j++)
-                    {
-                        urlmodules[j] = cache[j];
-                    }
+                string[] cache = url.Split(Divisors, StringSplitOptions.RemoveEmptyEntries);
+                string[] urlmodules = cache;
+                if(moduleindex+1 > urlmodules.Length){
+                    return "null";
+                }else{
+                     return urlmodules[moduleindex];
                 }
-                return urlmodules[moduleindex];
+               
             }
             URLObjects = new URL[urls.Length];
             int i = 0;
@@ -71,12 +63,4 @@ public class CoreParseFunc{
         
         }
 }
-
-internal class TestSpace{
-    static void Main(string[] args){
-
-
-
-    }
-}    
 }
