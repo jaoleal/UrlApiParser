@@ -1,0 +1,14 @@
+Url class
+    - getters
+        - scheme
+        - subdomain
+        - domain
+        - top level domain
+        - ?portnumber
+        - ?path
+        - ?path count (number of parameters in path )
+        - query string separator
+        - query string/parameter[]
+        - query string count
+    - constructor(parameter11)
+        - const url
