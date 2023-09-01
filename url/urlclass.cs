@@ -1,4 +1,5 @@
-public class Url{
+namespace global{
+    public class Url{
     public string scheme;
     public string domain;
     public string subdomain;
@@ -14,4 +15,5 @@ public class Url{
         topleveldomain = _toplevedomain
         querystring = _querystring;
     }
+}
 }
