@@ -1,59 +1,74 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Net.Http.Headers;
-
+using classes;
+namespace core{
 public class CoreParseFunc{
-        private string scheme;
-        public string Scheme
-        {
-            get{ return scheme;}
-        }
-        public CoreParseFunc(string url){
+        public URL[] URLObjects= new URL[1];
+        public CoreParseFunc(string url ){
             
         }
-        public CoreParseFunc(string[] url){
+        public CoreParseFunc(string[] urls){
 
-        }
-        public string[] TestUrls = {
-            "https://www.youtube.com/watch?v=Nj4XO0GPijY&ab_channel=PortadosFundos",
-            "https://www.youtube.com/watch?v=PK0_B_6FxAA&ab_channel=MuriloCouto",
-            "https://www.youtube.com/watch?v=-U1Gv1b9tXY&ab_channel=Swagger",
-            "https://youtu.be/-U1Gv1b9tXY",
-            "https://youtu.be/-U1Gv1b9tXY?t=36",
-            "https://www.instagram.com/stories/jorgebrandino/3181640852107095422/",
-            "https://www.twitter.com"
-        };
-        protected string[][] ParseUrl(string[] url)
-        {
-            string[] Divisors = { "https://www", ".", "/", "&ab_channel", "=", "whatch?v=" };
-            string[][] urlmodules = new string[url.Length][];
-            for (int i = 0; i < url.Length; i++)
-            {
-                string[] cache = url[i].Split(Divisors, StringSplitOptions.RemoveEmptyEntries);
-                urlmodules[i] = new string[cache.Length];
-                for (int j = 0; j < cache.Length; j++)
-                {
+            static string ParseUrl(string url, string target){   
+                
+                //divisors group that separate strings.
+                string[] Divisors = {"Null"};
 
-                    urlmodules[i][j] = cache[j];
+                //index of the target in the output.
+                int moduleindex = 0;
+
+                switch(target){
+                    case "Null":
+                    Console.WriteLine("Divisores não configurados corretamente");
+                    break;
+
+                    case "domain":
+                        Divisors = new string[] {"https://www.", ".com",};
+                        moduleindex = 0;
+                    break;
+
+                    case "scheme":
+                        Divisors = new string[] {"."};
+                        moduleindex = 0;
+                    break;
+                    case "topleveldomain":
+                        Divisors = new string[] {"https://www","."};
+                        moduleindex = 1; 
+                    break;
+                    case "path":
+                        Divisors = new string[] {"https://wwww.", ".com"};
+                        moduleindex = 1;
+                    break;
+                    case "querystring":
+                        Divisors = new string[] {"?"};
+                        moduleindex = 1;
+                    break;
+
                 }
-            }
-            return urlmodules;
-        }
 
-        protected string[] ParseUrl(string url)
-        {
-            string[] Divisors = { "https://www", ".", "/", "&ab_channel", "=", "whatch?v=" };
-            string[] urlmodules = new string[url.Length];
-            for (int i = 0; i < url.Length; i++)
-            {
-                string[] cache = url.Split(Divisors, StringSplitOptions.RemoveEmptyEntries);
-                urlmodules = new string[cache.Length];
-                for (int j = 0; j < cache.Length; j++)
-                {
-                    urlmodules[i] = cache[j];
+                
+                string[] urlmodules = new string[url.Length];
+                for (int i = 0; i < url.Length; i++){
+
+                    string[] cache = url.Split(Divisors, StringSplitOptions.RemoveEmptyEntries);
+                    urlmodules = new string[cache.Length];
+                    for (int j = 0; j < cache.Length; j++)
+                    {
+                        urlmodules[j] = cache[j];
+                    }
                 }
+                return urlmodules[moduleindex];
             }
-            return urlmodules;
+            URLObjects = new URL[urls.Length];
+            int i = 0;
+            foreach(string url in urls){
+                URLObjects[i] = new URL(ParseUrl(url, "scheme"),ParseUrl(url, "domain"),ParseUrl(url, "subdomain"),ParseUrl(url, "path"),ParseUrl(url, "topleveldomain"),ParseUrl(url, "querystring"));
+
+                i++;
+            }
+
+        
         }
 }
 
@@ -63,4 +78,5 @@ internal class TestSpace{
 
 
     }
+}    
 }
