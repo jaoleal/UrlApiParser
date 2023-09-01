@@ -10,7 +10,7 @@ string[] TestUrls = {
     "https://www.instagram.com/stories/jorgebrandino/3181640852107095422/",
     "https://www.twitter.com"
 };
- string[][] IdentifyUrl(string[] url){
+ string[][] ParseUrl(string[] url){
     string[] Divisors = {"https://www", ".","/","&ab_channel","=","whatch?v="};
     string [][] urlmodules = new string[url.Length][];
     for(int i = 0; i < TestUrls.Length; i++){
@@ -30,5 +30,4 @@ for( int i = 0 ;i < algout.Length; i++ ){
     for(int j = 0;j < algout[i].Length; j++){
             Console.WriteLine(algout[i][j]);
     }
-
 }
