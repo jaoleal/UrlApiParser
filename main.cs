@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using classes;
 using core;
 internal class TestSpace{
@@ -12,14 +13,12 @@ internal class TestSpace{
             "https://www.twitter.com"};
 
         CoreParseFunc Parseador = new CoreParseFunc(TestUrls);
-        foreach(var s in Parseador.URLObjects){
-            foreach(var t in s.allmodules){
+        URL[] parsedurl = Parseador.urlobjects;
+        foreach(var s in parsedurl){
+            foreach(var t in s.Allmodules){
                 Console.WriteLine(t);
             }
             
         }
-
-        
-
     }
 }    

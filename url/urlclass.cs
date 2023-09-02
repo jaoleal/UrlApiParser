@@ -7,15 +7,15 @@ namespace classes{
         protected string? subdomain{ get; set; }
         protected string? path{ get; set; }
         protected string? topleveldomain{ get; set; }
-        protected string[]? allmodules{ get; set; }
+        public string[]? Allmodules{ get; set; }
 
         public void parserinput(string[] modules){
             this.scheme = modules[0];
             this.domain = modules[1];
-            this.topleveldomain = modules[2] + "." + modules[3];
-            this.path = modules[4];
+            if(modules.Length > 2)this.topleveldomain = modules[2];// + "." + modules[3];
+            //this.path = modules[4];
 
-            this.allmodules = modules;
+            this.Allmodules = modules;
 
         } 
 }
