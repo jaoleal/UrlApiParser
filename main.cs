@@ -13,13 +13,12 @@ internal class TestSpace{
             //"https://www.twitter.com"
             };
 
-        CoreParseFunc Parseador = new CoreParseFunc(TestUrls[0]);
+        CoreParseFunc Parseador = new CoreParseFunc(TestUrls[3]);
         URL[] parsedurl = Parseador.urlobjects;
-        foreach(var s in parsedurl){
-            foreach(var t in s.Allmodules){
-                Console.WriteLine(t);
-            }
+        YoutubeURL ytburl = new YoutubeURL(parsedurl[0]);
+        ytburl.ParseId();
+        Console.WriteLine(ytburl.VideoId);
             
-        }
+        
     }
 }    
